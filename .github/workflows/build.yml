@@ -40,14 +40,6 @@ jobs:
         with:
           name: build
 
-      - name: List directory after download
-        run: |
-          echo "Listing root directory:"
-          ls -l
-          echo "Listing contents of dist directory if it exists:"
-          if [ -d "dist" ]; then ls -R dist; else echo "dist directory does not exist"; fi
-
-
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
@@ -59,6 +51,6 @@ jobs:
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
         run: |
           lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" -p "$SFTP_PORT" sftp://$SFTP_HOST <<EOF
-          mirror --reverse --delete --verbose dist /var/www/clients/client1/web1/web/maniek
+          mirror --reverse --delete --verbose * /var/www/clients/client1/web1/web/maniek
           bye
           EOF
