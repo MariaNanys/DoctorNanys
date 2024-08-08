@@ -43,14 +43,6 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
-      - name: Install ssh-keyscan
-        run: sudo apt-get install -y ssh
-
-      - name: Add SFTP server's host key to known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.SFTP_HOST }} >> ~/.ssh/known_hosts
-
       - name: Deploy to SFTP
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
