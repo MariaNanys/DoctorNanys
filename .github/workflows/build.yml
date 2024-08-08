@@ -40,6 +40,14 @@ jobs:
         with:
           name: build
 
+      - name: List directory after download
+        run: |
+          echo "Listing root directory:"
+          ls -l
+          echo "Listing contents of dist directory if it exists:"
+          if [ -d "dist" ]; then ls -R dist; else echo "dist directory does not exist"; fi
+
+
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
