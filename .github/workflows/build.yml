@@ -40,10 +40,17 @@ jobs:
         with:
           name: build
 
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
       - name: Deploy to SFTP
-        uses: appleboy/sftp-action@v1
-        with:
-          host: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          port: ${{ secrets.SFTP_PORT }}
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USERNAME: ${{ secrets.SFTP_USERNAME }}
+          SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_PORT: ${{ secrets.SFTP_PORT }}
+        run: |
+          lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" -p "$SFTP_PORT" sftp://$SFTP_HOST <<EOF
+          mirror --reverse --delete --verbose path/to/your/build/output /path/on/ftp/server
+          bye
+          EOF
