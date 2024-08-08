@@ -51,6 +51,6 @@ jobs:
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
         run: |
           lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" -p "$SFTP_PORT" sftp://$SFTP_HOST <<EOF
-          mirror --reverse --delete --verbose path/to/your/build/output /path/on/ftp/server
+          mirror --reverse --delete --verbose dist /path/on/ftp/server
           bye
           EOF
