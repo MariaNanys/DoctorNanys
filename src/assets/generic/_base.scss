@@ -3,11 +3,14 @@
 }
 
 :root {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
     color: $black;
-    background-color: rgb(195, 72, 166);
+    background-color: rgb(255, 255, 255);
 }
 
 h1, h2, h3 {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 }

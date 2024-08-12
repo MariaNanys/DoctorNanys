@@ -1,0 +1,95 @@
+header {
+  background-color: $black;
+  color: $white;
+  text-transform: uppercase;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  .logotype {
+    margin-left: 20px;
+  }
+  .nav-logo {
+    height: 70px;
+    width: 70px;
+    background-image: url("./images/m_nanys_logo_white_70x52.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+.nav-bar {
+    width: 43px;
+    height: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 9.5px;
+    margin: 21px 20px 0;
+    .bar {
+        height: 3px;
+        background-color: $white;
+        border-radius: 5px;
+    }
+    .bar1 {
+        align-self: flex-end;
+    }
+    .bar1, .bar3 {
+        width: 23px;
+    }
+    .bar3 {
+        align-self: flex-start;
+    }
+}
+  .nav-list-contact {
+    position: absolute;
+    width: 100%;
+    background-color: $black;
+    margin-top: 70px;
+
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    // padding: 40px 0 66px;
+  }
+  .nav-item a {
+    color: $white;
+    text-decoration: none;
+  }
+  .nav-contact {
+    display: flex;
+    height: 120px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 40px;
+    a {
+        text-decoration: none;
+        text-transform: lowercase;
+        color: $white;
+    }
+    .nav-icons-socialmedia {
+        display: flex;
+        gap: 15px;
+    }
+    .icon-socialmedia {
+        width: 30px;
+        height: 30px;
+    }
+    .icon-instagram  {
+        background-image: url("./images/instagram-white-icon.svg");
+    }
+    .icon-facebook  {
+        background-image: url("./images/facebook-white-icon.svg");
+    }
+    .icon-linkedin  {
+        background-image: url("./images/linkedin_icon.svg");
+    }
+    .icon-znany_lekarz  {
+        background-image: url("./images/znany-lekarz-icon.svg");
+    }
+  }
+}
