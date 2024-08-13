@@ -1,10 +1,31 @@
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+body {
+  max-width: 1200px;
+  margin: 0 auto;
 
-    padding: 0 1.875rem;
+  padding: 0 1.875rem;
 
-    @include M {
-        padding: 0 0.9375rem;
-    }
+  @include M {
+    padding: 0;
+  }
+}
+h2,
+h3 {
+  text-transform: uppercase;
+  color: $dark-grey;
+  font-weight: 500;
+}
+h2 {
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+h3 {
+  font-size: 14px;
+}
+
+p, a {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 20px;
+     text-decoration: none;
+    color: $dark-grey;
 }

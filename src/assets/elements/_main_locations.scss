@@ -1,0 +1,20 @@
+.main-locations {
+    margin: 48px 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .main-locations-detailes {
+        display: flex;flex-direction: column;
+        gap: 48px;
+    }
+    .main-locations-address {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+}
+.locations-tel {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
