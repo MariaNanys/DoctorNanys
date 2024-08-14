@@ -8,6 +8,10 @@ header {
   justify-content: space-between;
   position: relative;
 
+  @include S {
+    flex-direction: row;
+  }
+
   .logotype {
     margin-left: 20px;
   }
@@ -18,6 +22,11 @@ header {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+
+    @include S {
+      background-image: url("./images/mn_logo_poziom_black.png");
+      width: 245px;
+    }
   }
 .nav-bar {
     width: 43px;
@@ -26,6 +35,11 @@ header {
     flex-direction: column;
     gap: 9.5px;
     margin: 21px 20px 0;
+
+    @include S {
+      display: none;
+    }
+
     .bar {
         height: 3px;
         background-color: $white;
@@ -47,7 +61,13 @@ header {
     width: 100%;
     background-color: $black;
     margin-top: 70px;
-
+    @include S {
+      display: block;
+      position: relative;
+      margin-top: 0;
+      width: auto;
+      margin-right: 6.9vw;
+    }
   }
 
   ul {
@@ -56,6 +76,14 @@ header {
     align-items: center;
     gap: 22px;
     // padding: 40px 0 66px;
+
+    @include S {
+      flex-direction: row;
+      height: 100%;
+      width: auto;
+      justify-content: space-between;
+      gap: 6.6vw;
+    }
   }
   .nav-item a {
     color: $white;
@@ -67,6 +95,10 @@ header {
     align-items: center;
     justify-content: space-between;
     margin: 0 40px;
+
+    @include S {
+      display: none;
+    }
     a {
         text-decoration: none;
         text-transform: lowercase;

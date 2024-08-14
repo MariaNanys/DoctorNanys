@@ -13,13 +13,13 @@
 }
 
 @mixin M {
-    @media (max-width: map.get($breakpoints, M)) {
+    @media (min-width: map.get($breakpoints, M)) {
         @content;
     }
 }
 
 @mixin S {
-    @media (max-width: map.get($breakpoints, S)) {
+    @media (min-width: map.get($breakpoints, S)) {
         @content;
     }
 }
