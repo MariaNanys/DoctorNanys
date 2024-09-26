@@ -5,13 +5,17 @@ footer {
   align-items: center;
   padding: 22px 0;
   height: 100%;
+  
   a {
     color: $white;
   }
   @include M {
     flex-direction: row;
     justify-content: space-around;
-    position: relative;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
     height: 232px;
     gap: 25%;
   }
