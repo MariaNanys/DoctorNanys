@@ -1,0 +1,68 @@
+.main__intro {
+  width: 100%;
+
+  .main__intro-image-quote {
+    background-image: url("/src/images/mariusz_nanys-intro_193x420.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 420px;
+    .main__intro-image {
+      width: 300px;
+      height: 420px;
+    }
+  }
+  .main__intro-quote {
+    color: $gold;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 200;
+    width: 50%;
+    line-height: 35px;
+    position: absolute;
+    top: 20%;
+    right: 5%;
+  }
+  .main__intro-image-quote-name {
+    position: absolute;
+    right: 5%;
+    top: 29%;
+  }
+
+  strong {
+    font-weight: 500;
+  }
+  .main__intro-statistics {
+    height: 262px;
+    width: 100%;
+    background-image: url("/src/images/gold-texture.png");
+    background-size: contain;
+    padding: 50px;
+
+    .main__intro-statistics-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: space-between;
+      height: 168px;
+    }
+
+    .main__intro-statistics-list-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:nth-child(odd) {
+        margin-right: 100px;
+      }
+
+      h2 {
+        margin-bottom: 9px;
+      }
+      p {
+        width: 80px;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+}
