@@ -28,33 +28,59 @@ header {
       width: 245px;
     }
   }
-.nav-bar {
+  .nav-bar {
     width: 43px;
     height: 28px;
     display: flex;
     flex-direction: column;
     gap: 9.5px;
     margin: 21px 20px 0;
+    cursor: pointer;
 
     @include S {
       display: none;
     }
 
     .bar {
-        height: 3px;
-        background-color: $white;
-        border-radius: 5px;
+      height: 3px;
+      background-color: $white;
+      border-radius: 5px;
     }
     .bar1 {
-        align-self: flex-end;
+      align-self: flex-end;
     }
-    .bar1, .bar3 {
-        width: 23px;
+    .bar1,
+    .bar3 {
+      width: 23px;
     }
     .bar3 {
-        align-self: flex-start;
+      align-self: flex-start;
     }
-}
+    .change.bar1 {
+      color: red;
+      animation: move 1s;
+    }
+    @keyframes move {
+      from {
+        align-self: flex-end;
+      }
+      to {
+        align-self: flex-start;
+      }
+    }
+
+    .change.bar3 {
+      animation: move2 1s;
+    }
+    @keyframes move2 {
+      from {
+        align-self: flex-start;
+      }
+      to {
+        align-self: flex-end;
+      }
+    }
+  }
   .nav-list-contact {
     display: none;
     position: absolute;
@@ -100,29 +126,29 @@ header {
       display: none;
     }
     a {
-        text-decoration: none;
-        text-transform: lowercase;
-        color: $white;
+      text-decoration: none;
+      text-transform: lowercase;
+      color: $white;
     }
     .nav-icons-socialmedia {
-        display: flex;
-        gap: 15px;
+      display: flex;
+      gap: 15px;
     }
     .icon-socialmedia {
-        width: 30px;
-        height: 30px;
+      width: 30px;
+      height: 30px;
     }
-    .icon-instagram  {
-        background-image: url("./images/instagram-white-icon.svg");
+    .icon-instagram {
+      background-image: url("./images/instagram-white-icon.svg");
     }
-    .icon-facebook  {
-        background-image: url("./images/facebook-white-icon.svg");
+    .icon-facebook {
+      background-image: url("./images/facebook-white-icon.svg");
     }
-    .icon-linkedin  {
-        background-image: url("./images/linkedin_icon.svg");
+    .icon-linkedin {
+      background-image: url("./images/linkedin_icon.svg");
     }
-    .icon-znany_lekarz  {
-        background-image: url("./images/znany-lekarz-icon.svg");
+    .icon-znany_lekarz {
+      background-image: url("./images/znany-lekarz-icon.svg");
     }
   }
 }

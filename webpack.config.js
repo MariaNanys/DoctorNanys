@@ -38,6 +38,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html', // Path to your HTML template
+      inject: 'body', // Default: injects at the end of the body
+      injectPosition: 'webpack-inject', // Custom position in your template
     }),
   ],
 };

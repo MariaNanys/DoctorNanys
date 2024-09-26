@@ -1,0 +1,67 @@
+footer {
+  background-color: $black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 0;
+  height: 100%;
+  a {
+    color: $white;
+  }
+
+  .footer__nav-logo {
+    background-image: url("/src/images/mn_logo_pion_black\ 1.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 176px;
+    height: 162px;
+    display: flex;
+    align-self: center;
+  }
+  .footer__nav-list {
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-top: 14px;
+  }
+  .footer__mail {
+    text-decoration: underline;
+    margin-top: 35px;
+  }
+  .footer__icons-contact {
+    display: flex;
+    height: 30px;
+    width: 163px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 29px 0 34px;
+
+    .nav-icons-socialmedia {
+        display: flex;
+        gap: 15px;
+      }
+      .icon-socialmedia {
+        width: 30px;
+        height: 30px;
+      }
+      .icon-instagram {
+        background-image: url("./images/instagram-white-icon.svg");
+      }
+      .icon-facebook {
+        background-image: url("./images/facebook-white-icon.svg");
+      }
+      .icon-linkedin {
+        background-image: url("./images/linkedin_icon.svg");
+      }
+      .icon-znany_lekarz {
+        background-image: url("./images/znany-lekarz-icon.svg");
+      }
+  }
+  .footer__copyright {
+    font-size: 12px;
+    color: $white;
+  }
+}
