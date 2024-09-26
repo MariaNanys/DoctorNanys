@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import "./assets/_reset.scss";
-@import "./assets/variables/colors";
-@import "./assets/variables/breakpoints";
-@import "./assets/mixins/breakpoints";
-@import "./assets/generic/base";
-@import "./assets/generic/layout";
+@import "./assets/variables/_colors.scss";
+@import "./assets/variables/_breakpoints.scss";
+@import "./assets/mixins/_breakpoints.scss";
+@import "./assets/generic/_base.scss";
+@import "./assets/generic/_layout.scss";
 
-@import "./assets/elements/header";
-@import "./assets/elements/main_locations";
-@import "./assets/elements/footer";
+@import "./assets/elements/_header.scss";
+@import "./assets/elements/_main_locations.scss";
+@import "./assets/elements/_footer.scss";
