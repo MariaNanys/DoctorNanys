@@ -1,5 +1,14 @@
 .main__intro {
   width: 100%;
+  #myVideo {
+    display: none;
+    @include S {
+      display: block;
+      position: static;
+      right: 0;
+      min-width: 100%;
+    }
+  }
 
   .main__intro-image-quote {
     background-image: url("/src/images/mariusz_nanys-intro_193x420.png");
@@ -7,41 +16,63 @@
     background-repeat: no-repeat;
     width: 300px;
     height: 420px;
+    z-index: 2;
     @include S {
       margin-left: 10vw;
+      background-image: none;
+      height: auto;
     }
-  }
-  .main__intro-quote {
-    color: $gold;
-    font-size: 22px;
-    font-style: italic;
-    font-weight: 200;
-    width: 50%;
-    line-height: 35px;
-    position: absolute;
-    top: 20%;
-    right: 5%;
-  }
-  .main__intro-image-quote-name {
-    position: absolute;
-    right: 5%;
-    top: 29%;
-  }
 
-  strong {
-    font-weight: 500;
+    div {
+      width: 50%;
+      position: absolute;
+      top: 16%;
+      right: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      max-width: 260px;
+      gap: 12px;
+      @include S {
+        right: 15%;
+      }
+      @include M {
+        right: 150px;
+        top: 200px;
+      }
+    }
+    .main__intro-quote {
+      color: $gold;
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 200;
+      line-height: 35px;
+    }
+    .main__intro-quote {
+      font-size: 24px;
+    }
+    strong {
+      font-weight: 500;
+    }
+
+    .main__intro-image-quote-name {
+      color: $black;
+      font-size: 18px;
+      @include S {
+        color: $white;
+      }
+    }
   }
   .main__intro-statistics {
     width: 100%;
+    height: calc(100vh - 490px);
     background-image: url("/src/images/gold-texture.png");
     background-size: cover;
     background-position: left;
     padding: 50px;
     @include S {
-      background-position: center;  
+      background-position: center;
     }
-    
-    
 
     @include S {
       height: 100%;
@@ -49,13 +80,18 @@
     .main__intro-statistics-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
-      align-content: space-between;
+      justify-content: space-around;
       gap: 5vw;
+      align-content: space-around;
+      height: 100%;
+      width: 100%;
 
       @include S {
         justify-content: space-around;
         height: 100%;
+      }
+      & > * {
+        flex: 1 1 100px;
       }
     }
 
@@ -63,6 +99,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      width: 25vw;
       @include S {
         margin-right: 0;
       }
@@ -73,7 +110,7 @@
       p {
         width: 80px;
         text-align: center;
-        font-size: 12px;
+        font-size: 14px;
       }
     }
   }
