@@ -34,10 +34,10 @@
       max-width: 260px;
       gap: 12px;
       @include S {
-        right: 15%;
+        right: 3%;
       }
       @include M {
-        right: 150px;
+        right: 15vw;
         top: 200px;
       }
     }
