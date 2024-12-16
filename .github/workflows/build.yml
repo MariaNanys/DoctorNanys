@@ -43,7 +43,7 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
-      - name: Add SFTP server's host key to known_hosts
+      - name: Add SFTP server's host key to known_hosts new
         run: |
           mkdir -p ~/.ssh
           echo '|1|4xO8GifFLQDbodAQDyo1M2tgR2k=|N0AInowztB0D3mkYe4QPmLzeK6U= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHIhN37eROrdYZ0CPHF1TAsVztqvl59fawHjUp4G7eTEcFbDEHElByJVBxLbV8Smh9GA6WCFUzJgi3HDZthYKzI=' >> ~/.ssh/known_hosts
