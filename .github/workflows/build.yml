@@ -46,7 +46,7 @@ jobs:
       - name: Add SFTP server's host key to known_hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H $SFTP_HOST >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.SFTP_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy to SFTP
         env:
