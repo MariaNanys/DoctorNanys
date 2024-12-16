@@ -43,11 +43,6 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
-      - name: Add SFTP server's host key to known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          echo 'ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBABu+saqWpYeq/VzmkXXnFmNre8k2chYPp1Nq+zpj88nQ8XcA9C66v0HaU9ciMSXPt4qFfM+c81Qq8HFH38IieFDyQAv4n1aIWNlzhFjiHUuyjmQ2jVVwrq/Tkl3WPTMcglwaGp/cfZq9zlF29ZJ5xfTMXrUQ0Ggfd/bb2rj99Gh781A8w== root@server1' >> ~/.ssh/known_hosts
-
       - name: Deploy to SFTP
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
@@ -56,7 +51,7 @@ jobs:
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
         run: |
           lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" -p "$SFTP_PORT" sftp://$SFTP_HOST <<EOF
-          set ssl:verify-host no
+          set sftp:verify-host no  # Wyłączenie weryfikacji hosta
           mirror --reverse --delete --verbose . /var/www/clients/client1/web3/web
           bye
           EOF
