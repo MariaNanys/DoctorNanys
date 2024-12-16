@@ -44,9 +44,9 @@ jobs:
         run: sudo apt-get install -y lftp
       - name: Debug SFTP connection details
         run: |
-          echo "SFTP_HOST: $SFTP_HOST"
-          echo "SFTP_USERNAME: $SFTP_USERNAME"
-          echo "SFTP_PORT: $SFTP_PORT"
+          echo "SFTP_HOST: ${{SFTP_HOST}}"
+          echo "SFTP_USERNAME: ${{SFTP_USERNAME}}"
+          echo "SFTP_PORT: ${{SFTP_PORT}}"
 
       - name: Add SFTP server's host key to known_hosts
         run: |
