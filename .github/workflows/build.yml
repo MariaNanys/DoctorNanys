@@ -43,14 +43,10 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
-      - name: Debug SFTP_HOST
-        run: |
-          echo "SFTP_HOST is: ${{ secrets.SFTP_HOST }}"
-
       - name: Add SFTP server's host key to known_hosts
         run: |
           mkdir -p ~/.ssh
-          ssh-keyscan -H ${{ secrets.SFTP_HOST }} >> ~/.ssh/known_hosts
+          echo 'ecdsa-sha2-nistp521 AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1MjEAAACFBABu+saqWpYeq/VzmkXXnFmNre8k2chYPp1Nq+zpj88nQ8XcA9C66v0HaU9ciMSXPt4qFfM+c81Qq8HFH38IieFDyQAv4n1aIWNlzhFjiHUuyjmQ2jVVwrq/Tkl3WPTMcglwaGp/cfZq9zlF29ZJ5xfTMXrUQ0Ggfd/bb2rj99Gh781A8w== root@server1' >> ~/.ssh/known_hosts
 
       - name: Deploy to SFTP
         env:
