@@ -50,8 +50,8 @@ jobs:
           SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
           SFTP_PORT: ${{ secrets.SFTP_PORT }}
         run: |
+          export LFTP_NO_VERIFY_HOST=true
           lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" -p "$SFTP_PORT" sftp://$SFTP_HOST <<EOF
-          set sftp:verify-host no  # Wyłączenie weryfikacji hosta
           mirror --reverse --delete --verbose . /var/www/clients/client1/web3/web
           bye
           EOF
