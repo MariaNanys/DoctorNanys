@@ -43,11 +43,6 @@ jobs:
       - name: Install lftp
         run: sudo apt-get install -y lftp
 
-      - name: Add SFTP server's host key to known_hosts
-        run: |
-          mkdir -p ~/.ssh
-          echo 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDiFkYV598W2M1yUQav8jlGL6rQpMRgkKnSDA8s3du43kgMwnlTpBWt7R67G4di2Jsd+8jyOUENllDwCvL+mOoPqzc9NzhIRdjEXYXnJ7wlEfy7smSHinBc3Oi/5iVNLwjNcSgp5XKlyMwXZsXRLT22OYzD4/K2Qz3LfDmFouSe3xCu5oPog32yY2DVTSKhR77aeb83nI8DVdcKH9/jo8ZwgJZ6yRG5JFUMCs8tieQH+GL9UqScsEYalkTbblhmfRCEBpmTgUotGr8C+LWz9ZdNcVnP/NgClt+k2zTP4kqr7exV87bdTwgzYk1TUFl3/HczbBN8gUDVfJLtbQCe/iRx8Gum18j779YtopQjOEV+gT/TD0CRsijJp+dV3KE3T6dNDllJHoFdbKQiRo3puScWhMQ1KVykhVQDkHesgFtkav/NCNm8PUr2IE9IXaB8P7cbjIyWMQ/1L6Z7Gqrc6h6mGEH+WZdehm1sk6DQj2Zk5K7s4bNbX4SkIlN24aF3qzU=' >> ~/.ssh/known_hosts
-
       - name: Deploy to SFTP
         env:
           SFTP_HOST: ${{ secrets.SFTP_HOST }}
