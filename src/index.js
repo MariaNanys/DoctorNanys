@@ -7,6 +7,13 @@ let barLine1 = $(".bar1");
 let barLine3 = $(".bar3");
 
 $(document).ready(function () {
+  if (window.innerWidth <= 768) {
+    let video = $("#myVideo");
+    if (video) {
+        video.remove();
+    }
+  }
+
   $(document).click(function (e) {
     if (
       !$(e.target).closest(".nav-list-contact").length &&
@@ -44,12 +51,12 @@ $(document).ready(function () {
 });
 
 function checkVisibility() {
-    $(".intro_count").each(function () {
-        if (isVisible($(this))) {
-          startCounter($(this));
-          $(this).removeClass("intro_count");
-        }
-      });
+  $(".intro_count").each(function () {
+    if (isVisible($(this))) {
+      startCounter($(this));
+      $(this).removeClass("intro_count");
+    }
+  });
 }
 function isVisible(element) {
   let win = $(window);
