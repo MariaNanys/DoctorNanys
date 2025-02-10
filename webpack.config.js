@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   mode: 'production',
@@ -40,6 +41,11 @@ module.exports = {
       template: './src/index.html', // Path to your HTML template
       inject: 'body', // Default: injects at the end of the body
       injectPosition: 'webpack-inject', // Custom position in your template
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: "src/images", to: "images" }, // Kopiuje folder `images` do `build/images`
+      ],
     }),
   ],
   performance: {
