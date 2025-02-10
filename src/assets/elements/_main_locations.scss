@@ -4,13 +4,20 @@
     flex-direction: column;
     text-align: center;
     .main-locations-detailes {
-        display: flex;flex-direction: column;
+        display: flex;
+        flex-direction: column;
         gap: 48px;
+        justify-content: center;
+
+        @include L {
+            flex-direction: row;
+        }
     }
     .main-locations-address {
         display: flex;
         flex-direction: column;
         gap: 3px;
+ 
     }
 }
 .locations-tel {
