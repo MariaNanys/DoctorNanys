@@ -1,25 +1,37 @@
 import './styles.scss';
 import $ from './jquery';
 
-let barBtn = document.querySelector(".nav-bar");
-let barLine1 = document.querySelector(".bar1");
-let barLine3 = document.querySelector(".bar3");
+let navMenu = $(".nav-list-contact");
+let barBtn = $(".nav-bar");
+let barLine1 = $(".bar1");
+let barLine3 = $(".bar3");
 
-
-function toggleBar() {
-    console.log(barLine1);
-    console.log(barLine3);
-    barLine1.classList.toggle("change");
-    barLine3.classList.toggle("change");
-
-}
 
 $(document).ready(function (){
-    $("a").click(function (a){
-        $('html, body').animate({
-            scrollTop: $(a.target.hash).offset().top
-        }, 2000);
+    $(document).click(function(e) {
+        if(!$(e.target).closest(".nav-list-contact").length && $(navMenu)[0].style.top == '0px') {
+                $(barLine1).toggleClass("change");
+                $(barLine3).toggleClass("change");
+                $(navMenu).animate({top:'-330px'}, 1000)
+            }
     });
+    $("a").click(function (a){
+        if (a.target.hash) {
+            $('html, body').animate({
+                scrollTop: $(a.target.hash).offset().top
+            }, 2000);
+            $(barLine1).toggleClass("change");
+                $(barLine3).toggleClass("change");
+            $(navMenu).animate({top:'-330px'}, 1000)
+        }
+    });
+    $(barBtn).click(function (){
+        $(barLine1).toggleClass("change");
+        $(barLine3).toggleClass("change");
+        if($(navMenu)[0].style.top != '0px') {
+            $(navMenu).animate({top:'0px'}, 1000)
+        } else {
+             $(navMenu).animate({top:'-330px'}, 1000)
+        }  
+    }); 
 });
-
-barBtn.addEventListener("click", toggleBar);

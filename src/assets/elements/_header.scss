@@ -57,41 +57,29 @@ header {
       align-self: flex-start;
     }
     .change.bar1 {
-      color: red;
-      animation: move 1s;
-    }
-    @keyframes move {
-      from {
-        align-self: flex-end;
-      }
-      to {
-        align-self: flex-start;
-      }
+      align-self: flex-start;
     }
 
     .change.bar3 {
-      animation: move2 1s;
-    }
-    @keyframes move2 {
-      from {
-        align-self: flex-start;
-      }
-      to {
-        align-self: flex-end;
-      }
+      align-self: flex-end;
     }
   }
   .nav-list-contact {
-    display: none;
+    display: block;
+    top: -330px;
+    padding-top: 40px;
+    z-index: 10;
     position: absolute;
     width: 100%;
     background-color: $black;
     margin-top: 70px;
+    
     @include S {
-      display: block;
       position: relative;
       margin-top: 0;
       width: auto;
+      top: 0;
+      padding-top: 0;
       margin-right: 6.9vw;
     }
   }
