@@ -1,27 +1,26 @@
 .main-locations {
-    margin: 48px 0;
+  margin: 48px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  .main-locations-detailes {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    .main-locations-detailes {
-        display: flex;
-        flex-direction: column;
-        gap: 48px;
-        justify-content: center;
+    gap: 48px;
+    justify-content: center;
 
-        @include L {
-            flex-direction: row;
-        }
+    @include L {
+      flex-direction: row;
     }
-    .main-locations-address {
-        display: flex;
-        flex-direction: column;
-        gap: 3px;
- 
-    }
+  }
+  .main-locations-address {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
 }
 .locations-tel {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
 }
