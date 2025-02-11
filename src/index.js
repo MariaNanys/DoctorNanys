@@ -5,6 +5,7 @@ let navMenu = $(".nav-list-contact");
 let barBtn = $(".nav-bar");
 let barLine1 = $(".bar1");
 let barLine3 = $(".bar3");
+let arrow = $(".bounce");
 
 $(document).ready(function () {
   if (window.innerWidth <= 768) {
@@ -13,6 +14,19 @@ $(document).ready(function () {
         video.remove();
     }
   }
+  $(window).on("scroll", function () {
+    let scrollHeight = 700; // Wysokość, po której strzałka się pojawi
+    if ($(window).scrollTop() > scrollHeight) {
+      $(arrow).fadeIn(1); // Pokazuje strzałkę z animacją
+    } else {
+      $(arrow).fadeOut(1); // Ukrywa strzałkę z animacją
+    }
+  });
+  $(arrow).click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000); // Przewinięcie do góry w 1 sekundę
+  });
+  
+  
 
   $(document).click(function (e) {
     if (

@@ -20,10 +20,13 @@ h3 {
   font-size: 14px;
 }
 
-p, a {
+p, a, li {
     font-size: 14px;
     font-weight: 300;
     line-height: 20px;
      text-decoration: none;
     color: $dark-grey;
+}
+li {
+  color: $dark-grey;
 }
