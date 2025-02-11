@@ -15,7 +15,7 @@ $(document).ready(function () {
     }
   }
   $(window).on("scroll", function () {
-    let scrollHeight = 700; // Wysokość, po której strzałka się pojawi
+    let scrollHeight = 500; // Wysokość, po której strzałka się pojawi
     if ($(window).scrollTop() > scrollHeight) {
       $(arrow).fadeIn(1); // Pokazuje strzałkę z animacją
     } else {
