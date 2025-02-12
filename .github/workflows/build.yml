@@ -52,6 +52,6 @@ jobs:
         run: |
           lftp -u "$SFTP_USERNAME","$SFTP_PASSWORD" -p "$SFTP_PORT" sftp://$SFTP_HOST <<EOF
           set sftp:auto-confirm yes
-          mirror --reverse --delete --verbose --exclude "error/" --exclude "stats/" . /var/www/clients/client1/web3/web
+          mirror --reverse --delete --verbose --exclude "error/" --exclude "stats/" --exclude "map/" . /var/www/clients/client1/web3/web
           bye
           EOF
