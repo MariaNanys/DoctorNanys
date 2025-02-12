@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+
   .main-locations-detailes {
     display: flex;
     flex-direction: column;
@@ -13,12 +14,14 @@
       flex-direction: row;
     }
   }
+
   .main-locations-address {
     display: flex;
     flex-direction: column;
     gap: 3px;
   }
 }
+
 .locations-tel {
   display: flex;
   justify-content: center;

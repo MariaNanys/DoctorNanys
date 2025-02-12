@@ -15,6 +15,7 @@ header {
   .logotype {
     margin-left: 20px;
   }
+
   .nav-logo {
     height: 70px;
     width: 70px;
@@ -28,6 +29,7 @@ header {
       width: 245px;
     }
   }
+
   .nav-bar {
     width: 43px;
     height: 28px;
@@ -46,16 +48,20 @@ header {
       background-color: $white;
       border-radius: 5px;
     }
+
     .bar1 {
       align-self: flex-end;
     }
+
     .bar1,
     .bar3 {
       width: 23px;
     }
+
     .bar3 {
       align-self: flex-start;
     }
+
     .change.bar1 {
       align-self: flex-start;
     }
@@ -64,6 +70,7 @@ header {
       align-self: flex-end;
     }
   }
+
   .nav-list-contact {
     display: block;
     top: -330px;
@@ -99,10 +106,12 @@ header {
       gap: 6.6vw;
     }
   }
+
   .nav-item a {
     color: $white;
     text-decoration: none;
   }
+
   .nav-contact {
     display: flex;
     height: 120px;
@@ -113,28 +122,35 @@ header {
     @include S {
       display: none;
     }
+
     a {
       text-decoration: none;
       text-transform: lowercase;
       color: $white;
     }
+
     .nav-icons-socialmedia {
       display: flex;
       gap: 15px;
     }
+
     .icon-socialmedia {
       width: 30px;
       height: 30px;
     }
+
     .icon-instagram {
       background-image: url("./images/instagram-white-icon.svg");
     }
+
     .icon-facebook {
       background-image: url("./images/facebook-white-icon.svg");
     }
+
     .icon-linkedin {
       background-image: url("./images/linkedin_icon.svg");
     }
+
     .icon-znany_lekarz {
       background-image: url("./images/znany-lekarz-icon.svg");
     }

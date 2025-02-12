@@ -5,10 +5,11 @@ footer {
   align-items: center;
   padding: 22px 0;
   height: 100%;
-  
+
   a {
     color: $white;
   }
+
   @include S {
     flex-direction: row;
     justify-content: space-around;
@@ -31,11 +32,12 @@ footer {
     align-self: center;
 
     @include S {
-        position: absolute;
-        left: calc(50% - 81px);
-        top: 15px;
+      position: absolute;
+      left: calc(50% - 81px);
+      top: 15px;
     }
   }
+
   .footer__nav-list {
     text-transform: uppercase;
     text-align: center;
@@ -45,9 +47,10 @@ footer {
     margin-top: 14px;
 
     @include S {
-        flex-direction: row;
+      flex-direction: row;
     }
   }
+
   .footer__contact-icons {
     text-align: center;
     margin-top: 35px;
@@ -55,6 +58,7 @@ footer {
     .footer__mail {
       text-decoration: underline;
     }
+
     .footer__icons-contact {
       display: flex;
       height: 30px;
@@ -67,19 +71,24 @@ footer {
         display: flex;
         gap: 15px;
       }
+
       .icon-socialmedia {
         width: 30px;
         height: 30px;
       }
+
       .icon-instagram {
         background-image: url("./images/instagram-white-icon.svg");
       }
+
       .icon-facebook {
         background-image: url("./images/facebook-white-icon.svg");
       }
+
       .icon-linkedin {
         background-image: url("./images/linkedin_icon.svg");
       }
+
       .icon-znany_lekarz {
         background-image: url("./images/znany-lekarz-icon.svg");
       }
@@ -90,9 +99,9 @@ footer {
     font-size: 12px;
     color: $white;
     @include S {
-        position: absolute;
-        bottom: 22px;
-        left: calc(50% - 137px);
+      position: absolute;
+      bottom: 22px;
+      left: calc(50% - 137px);
     }
   }
 }
