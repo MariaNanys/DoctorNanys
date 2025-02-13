@@ -14,7 +14,7 @@
     text-align: center;
     position: relative;
 
-    h2,
+    h1,
     p {
       @include S {
         width: 48vw;
@@ -36,6 +36,7 @@
     }
     @include M {
       left: 46vw;
+      bottom: -55px;
     }
   }
 

@@ -1,6 +1,16 @@
 .main__intro {
   width: 100%;
 
+  img {
+    width: auto;
+    height: 100%;
+    
+
+    @include L {
+      margin-left: 15vw;
+    }
+  }
+
   .main__intro_arrow {
     position: fixed;
     right: 30px;
@@ -46,12 +56,6 @@
   }
 
   .main__intro-image-quote {
-    background-image: url("/src/images/mariusz_nanys-intro_193x420.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 300px;
-    height: 420px;
-    z-index: 2;
     @include S {
       margin-left: 10vw;
       background-image: none;

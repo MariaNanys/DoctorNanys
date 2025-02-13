@@ -1,11 +1,20 @@
 import "./styles.scss";
 import $ from "./jquery";
+import faqImplants from "./faq_implants";
 
 let navMenu = $(".nav-list-contact");
 let barBtn = $(".nav-bar");
 let barLine1 = $(".bar1");
 let barLine3 = $(".bar3");
 let arrow = $(".bounce");
+let faqImplantList = $(".main__offer_dental_implantology_faq");
+
+function loopIt(){
+    for(var i=0; i<faqImplants.length; i++){
+       $(faqImplantList).append(`<li><div id=${faqImplants[i].id} class="main__offer_implantology_question"><strong>${faqImplants[i].question}</strong><img class="arrow_down" src="./images/arrow_down.png"/></div><p class="hidden">${faqImplants[i].desc}</p></li>`);
+    }
+ }
+ loopIt();
 
 $(document).ready(function () {
     if (window.innerWidth <= 768) {
@@ -26,6 +35,14 @@ $(document).ready(function () {
         $("html, body").animate({scrollTop: 0}, 1000); // Przewinięcie do góry w 1 sekundę
     });
 
+
+    $(document).ready(function() {
+        $('.arrow_down').click(function() {
+            $(this).toggleClass('rotated'); // Obrót strzałki
+            $(this).closest('li').find('p').slideToggle();
+        });
+    });
+    
 
     $(document).click(function (e) {
         if (
@@ -96,3 +113,4 @@ function startCounter(element) {
         }
     );
 }
+
