@@ -36,12 +36,37 @@ $(document).ready(function () {
     });
 
 
-    $(document).ready(function() {
-        $('.arrow_down').click(function() {
-            $(this).toggleClass('rotated'); // Obrót strzałki
+    
+        $('.main__offer_implantology_question').click(function() {
+            $(this).find(".arrow_down").toggleClass('rotated'); // Obrót strzałki
             $(this).closest('li').find('p').slideToggle();
         });
-    });
+
+        
+        $('.btn_read_more').click(function() {
+            $(this).closest('li').find('article').slideToggle(1500);
+            
+            var clickedLi = $(this).closest("li");
+            var list = $(".list");
+    
+            if (clickedLi.hasClass("active")) {
+                // Jeśli już aktywny – wróć do normalnego stanu
+                clickedLi.removeClass("active");
+            } else {
+                // Resetuje inne elementy
+                list.find("li").removeClass("active");
+    
+                // Rozszerza kliknięty element
+                clickedLi.addClass("active");
+            }
+
+            if ($(this).text() === "Czytaj więcej...") {
+                $(this).text("Zwiń");
+            } else {
+                $(this).text("Czytaj więcej...");
+            }
+        });
+    
     
 
     $(document).click(function (e) {

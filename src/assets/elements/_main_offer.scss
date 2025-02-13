@@ -15,23 +15,21 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 50px;
-    align-items: center;
-    @include L {
-      // flex-direction: row;
-    }
   }
 
   .offer_item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 400px;
     justify-content: space-between;
 
     @include S {
       width: 80vw;
       max-width: 800px;
+      margin: 0 auto;
     }
+
+    
 
     button {
       border: none;
@@ -80,6 +78,10 @@
     max-height: 250px;
   }
 }
+article.hidden {
+  display: none;
+}
+
 .main__offer_dental_implantology_more {
   h4 {
     font-weight: 600;
@@ -135,12 +137,11 @@
   background-color: $white;
   position: relative;
   height: 40px;
-  
+   cursor: pointer;
 
   .arrow_down {
     width: 20px;
     height: 12.5px;
-    cursor: pointer;
     transition: transform .5s ease;
   }
 }

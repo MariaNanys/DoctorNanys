@@ -4,10 +4,10 @@
   img {
     width: auto;
     height: 100%;
-    
+    margin-left: -30px;
 
-    @include L {
-      margin-left: 15vw;
+    @include M {
+      margin-left: 20vw;
     }
   }
 
@@ -72,6 +72,7 @@
       align-items: flex-end;
       max-width: 260px;
       gap: 12px;
+      text-align: right;
       @include S {
         right: 3%;
       }
@@ -83,14 +84,10 @@
 
     .main__intro-quote {
       color: $gold;
-      font-size: 22px;
+      font-size: 18px;
       font-style: italic;
       font-weight: 200;
       line-height: 35px;
-    }
-
-    .main__intro-quote {
-      font-size: 24px;
     }
 
     strong {
@@ -99,10 +96,6 @@
 
     .main__intro-image-quote-name {
       color: $black;
-      font-size: 18px;
-      @include S {
-        color: $white;
-      }
     }
   }
 
