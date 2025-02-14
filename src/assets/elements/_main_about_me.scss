@@ -2,7 +2,7 @@
   padding: 40px;
   width: 100%;
   @include M {
-    padding-left: 100px;
+    margin:  0 auto;
   }
 
   .main__about-me_title-image {
@@ -16,6 +16,8 @@
 
     @include M {
       height: 400px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     h1,
@@ -39,8 +41,8 @@
       right: -110px;
     }
     @include M {
-      left: 49vw;
-      bottom: -55px;
+      left: 55vw;
+      bottom: -40px;
     }
   }
 
@@ -48,7 +50,7 @@
     margin-top: 20px;
 
     @include S {
-      width: 100%;
+      width: 500px;
       text-align: left;
     }
 
@@ -57,7 +59,13 @@
       font-size: 16px;
     }
   }
-
-  .main__about-me_certificates {
+  .main__about-me_items_logos {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  
 }
+.main__about-me_certificates {
+  }
