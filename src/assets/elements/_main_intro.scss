@@ -1,5 +1,4 @@
 .main__intro {
-  height: calc(100vh - 70px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -41,8 +40,10 @@
   }
   .main__intro-image-quote {
     display: flex;
-    height: 470px;
     justify-content: center;
+    &>img {
+      height: 52vh;
+    }
     @include S {
       gap: 50px;
     }
