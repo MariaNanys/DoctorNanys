@@ -84,7 +84,7 @@ $(document).ready(function () {
   $(document).click(function (e) {
     if (
       !$(e.target).closest(".nav-list-contact").length &&
-      $(navMenu)[0].style.top == "0px"
+      $(navMenu)[0].style.top == "-1px"
     ) {
       $(barLine1).toggleClass("change");
       $(barLine3).toggleClass("change");
@@ -109,9 +109,11 @@ $(document).ready(function () {
   $(barBtn).click(function () {
     $(barLine1).toggleClass("change");
     $(barLine3).toggleClass("change");
-    if ($(navMenu)[0].style.top != "0px") {
-      $(navMenu).animate({ top: "0px" }, 1000);
+    if ($(navMenu)[0].style.top != "-1px") {
+      $(navMenu).animate({ top: "-1px" }, 1000);
     } else {
+        $(barLine1).toggleClass("change");
+    $(barLine3).toggleClass("change");
       $(navMenu).animate({ top: "-330px" }, 1000);
     }
   });

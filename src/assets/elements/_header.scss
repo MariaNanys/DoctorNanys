@@ -1,158 +1,165 @@
 header {
   background-color: $black;
   color: $white;
-  text-transform: uppercase;
-  height: 70px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  position: relative;
 
-  @include S {
-    flex-direction: row;
-  }
-
-  .logotype {
-    margin-left: 20px;
-  }
-
-  .nav-logo {
+  .header_content {
+    margin: 0 auto;
+    text-transform: uppercase;
     height: 70px;
-    width: 70px;
-    background-image: url("./images/m_nanys_logo_white_70x52.png");
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    @include S {
-      background-image: url("./images/mn_logo_poziom_black.png");
-      width: 245px;
-    }
-  }
-
-  .nav-bar {
-    width: 43px;
-    height: 28px;
+    max-width: 1200px;
     display: flex;
-    flex-direction: column;
-    gap: 9.5px;
-    margin: 21px 20px 0;
-    cursor: pointer;
-
-    @include S {
-      display: none;
-    }
-
-    .bar {
-      height: 3px;
-      background-color: $white;
-      border-radius: 5px;
-    }
-
-    .bar1 {
-      align-self: flex-end;
-    }
-
-    .bar1,
-    .bar3 {
-      width: 23px;
-    }
-
-    .bar3 {
-      align-self: flex-start;
-    }
-
-    .change.bar1 {
-      align-self: flex-start;
-    }
-
-    .change.bar3 {
-      align-self: flex-end;
-    }
-  }
-
-  .nav-list-contact {
-    display: block;
-    top: -330px;
-    padding-top: 40px;
-    z-index: 10;
-    position: absolute;
-    width: 100%;
-    background-color: $black;
-    margin-top: 70px;
-
-    @include S {
-      position: relative;
-      margin-top: 0;
-      width: auto;
-      top: 0;
-      padding-top: 0;
-      margin-right: 6.9vw;
-    }
-  }
-
-  ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-    // padding: 40px 0 66px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1000;
 
     @include S {
       flex-direction: row;
-      height: 100%;
-      width: auto;
-      justify-content: space-between;
-      gap: 6.6vw;
-    }
-  }
-
-  .nav-item a {
-    color: $white;
-    text-decoration: none;
-  }
-
-  .nav-contact {
-    display: flex;
-    height: 120px;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 40px;
-
-    @include S {
-      display: none;
     }
 
-    a {
-      text-decoration: none;
-      text-transform: lowercase;
-      color: $white;
+    .logotype {
+      margin-left: 20px;
     }
 
-    .nav-icons-socialmedia {
+    .nav-logo {
+      height: 70px;
+      width: 70px;
+      background-image: url("./images/m_nanys_logo_white_70x52.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      @include S {
+        background-image: url("./images/mn_logo_poziom_black.png");
+        width: 245px;
+      }
+    }
+
+    
+
+    .nav-list-contact {
+      display: block;
+      top: -330px;
+      padding-top: 40px;
+      z-index: 2;
+      position: absolute;
+      width: 100%;
+      background-color: $black;
+      margin-top: 70px;
+
+      @include S {
+        position: relative;
+        margin-top: 0;
+        width: auto;
+        top: 0;
+        padding-top: 0;
+        margin-right: 6.9vw;
+      }
+    }
+
+    ul {
       display: flex;
-      gap: 15px;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+      // padding: 40px 0 66px;
+
+      @include S {
+        flex-direction: row;
+        height: 100%;
+        width: auto;
+        justify-content: space-between;
+        gap: 6.6vw;
+      }
     }
 
-    .icon-socialmedia {
-      width: 30px;
-      height: 30px;
+    .nav-item a {
+      color: $white;
+      text-decoration: none;
     }
 
-    .icon-instagram {
-      background-image: url("./images/instagram-white-icon.svg");
-    }
+    .nav-contact {
+      display: flex;
+      height: 120px;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 40px;
 
-    .icon-facebook {
-      background-image: url("./images/facebook-white-icon.svg");
-    }
+      @include S {
+        display: none;
+      }
 
-    .icon-linkedin {
-      background-image: url("./images/linkedin_icon.svg");
-    }
+      a {
+        text-decoration: none;
+        text-transform: lowercase;
+        color: $white;
+      }
 
-    .icon-znany_lekarz {
-      background-image: url("./images/znany-lekarz-icon.svg");
+      .nav-icons-socialmedia {
+        display: flex;
+        gap: 15px;
+      }
+
+      .icon-socialmedia {
+        width: 30px;
+        height: 30px;
+      }
+
+      .icon-instagram {
+        background-image: url("./images/instagram-white-icon.svg");
+      }
+
+      .icon-facebook {
+        background-image: url("./images/facebook-white-icon.svg");
+      }
+
+      .icon-linkedin {
+        background-image: url("./images/linkedin_icon.svg");
+      }
+
+      .icon-znany_lekarz {
+        background-image: url("./images/znany-lekarz-icon.svg");
+      }
     }
   }
 }
+.nav-bar {
+      width: 43px;
+      height: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 9.5px;
+      margin: 21px 20px 0;
+      cursor: pointer;
+
+      @include S {
+        display: none;
+      }
+
+      .bar {
+        height: 3px;
+        background-color: $white;
+        border-radius: 5px;
+      }
+
+      .bar1 {
+        align-self: flex-end;
+      }
+
+      .bar1,
+      .bar3 {
+        width: 23px;
+      }
+
+      .bar3 {
+        align-self: flex-start;
+      }
+
+      .change.bar1 {
+        align-self: flex-start;
+      }
+
+      .change.bar3 {
+        align-self: flex-end;
+      }
+    }
