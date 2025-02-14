@@ -1,7 +1,7 @@
 .main__offer {
   width: 100%;
   background-color: $dark-grey;
-  padding: 50px;
+  padding: 40px;
 
   h3,
   h4,
@@ -28,8 +28,6 @@
       max-width: 800px;
       margin: 0 auto;
     }
-
-    
 
     button {
       border: none;
@@ -75,14 +73,13 @@
 
   p {
     margin-top: 20px;
-    max-height: 250px;
   }
 }
 article.hidden {
   display: none;
 }
 
-.main__offer_dental_implantology_more {
+.main__offer_more {
   h4 {
     font-weight: 600;
     margin: 30px 0 15px;
@@ -93,7 +90,7 @@ article.hidden {
     font-weight: 600;
   }
 }
-.main__offer_dental_implantology_more_works {
+.main__offer_more_works {
   display: flex;
   flex-wrap: wrap;
   li {
@@ -108,27 +105,27 @@ article.hidden {
     }
   }
 }
-.main__offer_dental_implantology_faq {
+.main__offer_faq {
   li {
     background-color: $white;
-    max-width: 300px;
     width: 100%;
     padding: 8px;
     margin-top: 5px;
-    @include S {
     max-width: 800px;
-  }
-    p {
+    @include S {
+    }
+    p.hide {
       margin-top: 10px;
       font-style: normal;
       color: $grey;
-    }
-    p.hidden {
       display: none;
-  }
+    }
+    p.show {
+      display: block;
+    }
   }
 }
-.main__offer_implantology_question {
+.main__offer_question {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -137,12 +134,12 @@ article.hidden {
   background-color: $white;
   position: relative;
   height: 40px;
-   cursor: pointer;
+  cursor: pointer;
 
   .arrow_down {
     width: 20px;
     height: 12.5px;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
   }
 }
 .rotated {

@@ -10,9 +10,13 @@
     height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
     position: relative;
+
+    @include M {
+      height: 400px;
+    }
 
     h1,
     p {
@@ -42,8 +46,10 @@
 
   .main__about-me_items {
     margin-top: 20px;
-    @include M {
-      width: 48vw;
+
+    @include S {
+      width: 100%;
+      text-align: left;
     }
 
     li {
