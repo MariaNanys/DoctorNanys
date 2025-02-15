@@ -71,10 +71,12 @@ module.exports = {
             ],
         }),
         new CompressionPlugin({
-            algorithm: "gzip", // Możesz zmienić na "brotliCompress"
-            test: /\.(js|css|html|svg)$/, // Kompresujemy JS, CSS, HTML i SVG
-            threshold: 10240, // Minimalny rozmiar pliku do kompresji (10KB)
-            minRatio: 0.8, // Kompresuj tylko, jeśli oszczędności są większe niż 20%
+            filename: '[path][base].gz',  // Nazwa pliku z kompresją
+            algorithm: 'gzip',             // Możesz użyć 'brotli' lub 'deflate'
+            test: /\.(js|css|html|svg)$/,  // Pliki do kompresji
+            threshold: 10240,              // Minimalny rozmiar pliku do kompresji (w bajtach)
+            minRatio: 0.8,                 // Minimalny współczynnik kompresji
+            compressionOptions: { level: 9 } // Poziom kompresji
         }),
     ],
     performance: {
