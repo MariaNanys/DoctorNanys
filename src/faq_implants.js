@@ -37,7 +37,7 @@
     {
         id:8,
         question: "Ile kosztuje wszczepienie implantu?",
-        desc: "Cena zależy od rodzaju implantu, zastosowanych technologii oraz liczby wizyt. W Polsce koszt wszczepienia jednego implantu (bez odbudowy protetycznej) zaczyna się od około 3 000 – 5 000 zł."
+        desc: "Cena zależy od rodzaju implantu, zastosowanych technologii oraz liczby wizyt. W Polsce koszt wszczepienia jednego implantu (bez odbudowy protetycznej) zaczyna się od około 3 500 – 5 000 zł."
     },
     {
         id:9,
