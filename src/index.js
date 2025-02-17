@@ -40,6 +40,7 @@ $(document).ready(function () {
     }
   });
   $(arrow).click(function () {
+    window.history.pushState("", "", "/");
     $("html, body").animate({ scrollTop: 0 }, 1000); // Przewinięcie do góry w 1 sekundę
   });
 
@@ -99,9 +100,10 @@ $(document).ready(function () {
         },
         2000
       );
-      $(barLine1).toggleClass("change");
-      $(barLine3).toggleClass("change");
+
       if (window.innerWidth <= 600) {
+        $(barLine1).toggleClass("change");
+        $(barLine3).toggleClass("change");
         $(navMenu).animate({ top: "-330px" }, 1000);
       }
     }
@@ -112,8 +114,8 @@ $(document).ready(function () {
     if ($(navMenu)[0].style.top != "-1px") {
       $(navMenu).animate({ top: "-1px" }, 1000);
     } else {
-        $(barLine1).toggleClass("change");
-    $(barLine3).toggleClass("change");
+      $(barLine1).toggleClass("change");
+      $(barLine3).toggleClass("change");
       $(navMenu).animate({ top: "-330px" }, 1000);
     }
   });
