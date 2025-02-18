@@ -50,7 +50,7 @@
     margin-top: 20px;
 
     @include S {
-      width: 500px;
+      width: 600px;
       text-align: left;
     }
 
@@ -62,7 +62,7 @@
   .main__about-me_items_logos {
     padding-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     img {
@@ -70,7 +70,7 @@
       height: auto;
 
       @include S {
-        width: 200px;
+        width: 120px;
         height: auto;
       }
     }
@@ -78,4 +78,8 @@
   
 }
 .main__about-me_certificates {
+  img {
+    max-width: 300px;
+    max-height: 300px;
+  }
   }

@@ -4,6 +4,7 @@ import faqImplants from "./faq_implants";
 import faqProsthetics from "./faq_prothetics";
 import faqSurgery from "./faq_surgery";
 
+
 let navMenu = $(".nav-list-contact");
 let barBtn = $(".nav-bar");
 let barLine1 = $(".bar1");
@@ -24,7 +25,9 @@ loopIt(faqImplants, faqImplantList);
 loopIt(faqSurgery, faqSurgeryList);
 loopIt(faqProsthetics, faqProstheticsList);
 
+
 $(document).ready(function () {
+
   if (window.innerWidth <= 768) {
     let video = $("#myVideo");
     if (video) {
