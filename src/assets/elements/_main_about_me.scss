@@ -2,7 +2,7 @@
   padding: 40px;
   width: 100%;
   @include M {
-    margin:  0 auto;
+    margin: 0 auto;
   }
 
   .main__about-me_title-image {
@@ -25,7 +25,6 @@
       @include S {
         width: 48vw;
       }
-
     }
   }
 
@@ -75,7 +74,6 @@
       }
     }
   }
-  
 }
 .main__about-me_certificates {
   margin-top: 150px;
@@ -84,8 +82,15 @@
   flex-wrap: wrap;
   gap: 20px;
   align-items: center;
+  .diplomas {
+    max-width: 100%;
+    .slick-prev:before,
+    .slick-next:before {
+      color: red;
+    }
+  }
   img {
     max-width: 300px;
     max-height: 300px;
   }
-  }
+}

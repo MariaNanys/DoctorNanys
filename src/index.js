@@ -1,9 +1,9 @@
 import "./styles.scss";
-import $ from "./jquery";
+import $ from "jquery";
 import faqImplants from "./faq_implants";
 import faqProsthetics from "./faq_prothetics";
 import faqSurgery from "./faq_surgery";
-
+import "slick-carousel";
 
 let navMenu = $(".nav-list-contact");
 let barBtn = $(".nav-bar");
@@ -25,9 +25,32 @@ loopIt(faqImplants, faqImplantList);
 loopIt(faqSurgery, faqSurgeryList);
 loopIt(faqProsthetics, faqProstheticsList);
 
-
 $(document).ready(function () {
-
+  $(".diplomas").slick({
+    centerMode: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 1,
+        },
+      },
+    ],
+  });
   if (window.innerWidth <= 768) {
     let video = $("#myVideo");
     if (video) {
