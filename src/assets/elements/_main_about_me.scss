@@ -78,6 +78,12 @@
   
 }
 .main__about-me_certificates {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
   img {
     max-width: 300px;
     max-height: 300px;
