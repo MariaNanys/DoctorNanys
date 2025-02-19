@@ -1,13 +1,12 @@
 .main__about-me {
-  padding: 40px;
-  width: 100%;
+  width: 86vw;
   @include M {
+    width: 100%;
     margin: 0 auto;
   }
 
   .main__about-me_title-image {
     width: 100%;
-    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -61,15 +60,21 @@
   .main__about-me_items_logos {
     padding-top: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include S {
+      justify-content: space-between;
+    }
 
     img {
       width: 150px;
       height: auto;
 
       @include S {
-        width: 120px;
+        width: 100px;
         height: auto;
       }
     }
@@ -77,20 +82,24 @@
 }
 .main__about-me_certificates {
   margin-top: 150px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
   align-items: center;
+
   .diplomas {
     max-width: 100%;
+    .slick-slide {
+      width: auto !important;
+      margin: 0 10px;
+      max-width: 200px;
+      max-height: 200px;
+    }
+
     .slick-prev:before,
     .slick-next:before {
       color: red;
     }
   }
   img {
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 200px;
+    max-height: 200px;
   }
 }
