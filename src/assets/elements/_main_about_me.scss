@@ -1,46 +1,39 @@
 .main__about-me {
   width: 86vw;
+  max-width: 1200px;
   @include M {
-    width: 100%;
+    width: 80vw;
     margin: 0 auto;
   }
-
+h1 {
+  text-align: center;
+}
   .main__about-me_title-image {
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
     text-align: center;
     position: relative;
 
     @include M {
       height: 400px;
-      max-width: 1200px;
+      max-width: 1000px;
       margin: 0 auto;
     }
+    
+    .main__about-me_description {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
 
-    h1,
     p {
-      @include S {
-        width: 48vw;
-      }
-    }
-  }
 
-  .main__about-me_title-image::before {
-    height: 0;
-    width: 0;
-    @include S {
-      height: 500px;
-      width: 357px;
-      content: url("/src/images/mariusz_nanys-intro_357x500.png");
-      transform: scaleX(-1);
-      position: absolute;
-      right: -110px;
-    }
-    @include M {
-      left: 55vw;
-      bottom: -40px;
+      @include S {
+        margin: 30px 0;
+        max-width: 500px;
+      }
     }
   }
 
@@ -48,7 +41,8 @@
     margin-top: 20px;
 
     @include S {
-      width: 600px;
+      width: 50vw;
+      max-width: 600px;
       text-align: left;
     }
 
@@ -65,10 +59,15 @@
     flex-wrap: wrap;
     gap: 20px;
 
-    @include S {
-      justify-content: space-between;
+    @include M {
+      width: 55vw;
+      justify-content: space-between; 
     }
-
+    @include L {
+      width: 60vw;
+      max-width: 600px;
+    }
+    
     img {
       width: 150px;
       height: auto;
@@ -76,13 +75,31 @@
       @include S {
         width: 100px;
         height: auto;
+        &:first-child {
+      height: 50px;
+      width: auto;
+    }
       }
     }
+    
   }
 }
+.main__about-me-image {
+  display: none;
+  @include S {
+    display: block;
+  }
+}
+
 .main__about-me_certificates {
-  margin-top: 150px;
+  margin: 100px auto 50px;
   align-items: center;
+
+  @include S {
+    margin: 100px auto;
+    width: 80vw;
+    max-width: 1200px;
+  }
 
   .diplomas {
     max-width: 100%;
@@ -95,7 +112,7 @@
 
     .slick-prev:before,
     .slick-next:before {
-      color: red;
+      color: $dark-grey;
     }
   }
   img {

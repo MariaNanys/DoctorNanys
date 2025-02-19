@@ -29,20 +29,23 @@ $(document).ready(function () {
   $(".diplomas").slick({
     centerMode: true,
     centerPadding: "60px",
-    slidesToShow: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    slidesToShow: 3,
     mobileFirst: true,
     pauseOnHover: true,
     variableWidth: true,
+    initialSlide: 6,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 1500,
     responsive: [
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
+          arrows: true,
           centerMode: true,
           centerPadding: "40px",
           slidesToShow: 1,
+
         },
       },
       {
@@ -52,6 +55,8 @@ $(document).ready(function () {
           centerMode: true,
           centerPadding: "20px",
           slidesToShow: 1,
+          autoplay: true,
+          speed: 1000,
         },
       },
     ],
