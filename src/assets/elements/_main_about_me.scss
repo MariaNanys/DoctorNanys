@@ -114,3 +114,11 @@
     max-height: 200px;
   }
 }
+
+.slick-lightbox .slick-arrow {
+  display: none !important;
+  @include M {
+    z-index: 999;
+    display: block !important;
+  }
+}
