@@ -111,12 +111,14 @@
       flex-direction: column;
       align-items: center;
       width: 25vw;
+      text-align: center;
       @include S {
         margin-right: 0;
       }
 
-      h2 {
+      h3 {
         margin-bottom: 9px;
+        width: 45px;
       }
 
       p {
