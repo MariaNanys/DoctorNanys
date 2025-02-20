@@ -69,17 +69,13 @@ h1 {
     }
     
     img {
-      width: 150px;
-      height: auto;
-
-      @include S {
         width: 100px;
         height: auto;
         &:first-child {
       height: 50px;
       width: auto;
     }
-      }
+      
     }
     
   }
