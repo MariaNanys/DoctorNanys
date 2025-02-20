@@ -17,7 +17,7 @@ let faqProstheticsList = $(".main__offer_prosthetics_faq");
 function loopIt(item, source) {
   for (var i = 0; i < item.length; i++) {
     $(source).append(
-      `<li class="faq-item"><div id=${item[i].id} class="main__offer_question"><strong>${item[i].question}</strong><img class="arrow_down" src="./images/arrow_down.png"/></div><p class='hide'>${item[i].desc}</p></li>`
+      `<li class="faq-item"><div id=${item[i].id} class="main__offer_question"><strong>${item[i].question}</strong><img class="arrow_down" src="./images/arrow_down.webp"/></div><p class='hide'>${item[i].desc}</p></li>`
     );
   }
 }
