@@ -50,9 +50,13 @@
     justify-content: center;
     &>img {
       width: auto;
-      height: 60vh;
+      height: 45vh;
       max-height: 470px;
       max-width: 220px;
+
+      @include S {
+        height: 60vh;
+      }
     }
     @include S {
       gap: 50px;
