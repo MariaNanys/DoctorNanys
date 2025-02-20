@@ -5,9 +5,9 @@
     width: 80vw;
     margin: 0 auto;
   }
-h1 {
-  text-align: center;
-}
+  h1 {
+    text-align: center;
+  }
   .main__about-me_title-image {
     width: 100%;
     display: flex;
@@ -21,7 +21,7 @@ h1 {
       max-width: 1000px;
       margin: 0 auto;
     }
-    
+
     .main__about-me_description {
       display: flex;
       flex-direction: column;
@@ -29,7 +29,6 @@ h1 {
     }
 
     p {
-
       @include S {
         margin: 30px 0;
         max-width: 500px;
@@ -61,23 +60,21 @@ h1 {
 
     @include M {
       width: 55vw;
-      justify-content: space-between; 
+      justify-content: space-between;
     }
     @include L {
       width: 60vw;
       max-width: 600px;
     }
-    
+
     img {
-        width: 100px;
-        height: auto;
-        &:first-child {
-      height: 50px;
-      width: auto;
+      width: 100px;
+      height: auto;
+      &:first-child {
+        height: 50px;
+        width: auto;
+      }
     }
-      
-    }
-    
   }
 }
 .main__about-me-image {
@@ -112,6 +109,7 @@ h1 {
     }
   }
   img {
+    cursor: pointer;
     max-width: 200px;
     max-height: 200px;
   }

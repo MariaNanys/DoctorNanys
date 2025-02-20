@@ -36,7 +36,9 @@
     "*.scss"
   ],
   "dependencies": {
+    "expose-loader": "^5.0.1",
     "jquery": "^3.7.1",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "slick-lightbox": "^0.2.12"
   }
 }

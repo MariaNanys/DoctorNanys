@@ -1,9 +1,9 @@
 import "./styles.scss";
-import $ from "jquery";
 import faqImplants from "./faq_implants";
 import faqProsthetics from "./faq_prothetics";
 import faqSurgery from "./faq_surgery";
 import "slick-carousel";
+import "slick-lightbox";
 
 let navMenu = $(".nav-list-contact");
 let barBtn = $(".nav-bar");
@@ -26,6 +26,30 @@ loopIt(faqSurgery, faqSurgeryList);
 loopIt(faqProsthetics, faqProstheticsList);
 
 $(document).ready(function () {
+  jQuery.event.special.touchstart = {
+    setup: function (_, ns, handle) {
+      this.addEventListener("touchstart", handle, {
+        passive: !ns.includes("noPreventDefault"),
+      });
+    },
+  };
+  jQuery.event.special.touchmove = {
+    setup: function (_, ns, handle) {
+      this.addEventListener("touchmove", handle, {
+        passive: !ns.includes("noPreventDefault"),
+      });
+    },
+  };
+  jQuery.event.special.wheel = {
+    setup: function (_, ns, handle) {
+      this.addEventListener("wheel", handle, { passive: true });
+    },
+  };
+  jQuery.event.special.mousewheel = {
+    setup: function (_, ns, handle) {
+      this.addEventListener("mousewheel", handle, { passive: true });
+    },
+  };
   $(".diplomas").slick({
     centerMode: true,
     centerPadding: "60px",
@@ -45,7 +69,6 @@ $(document).ready(function () {
           centerMode: true,
           centerPadding: "40px",
           slidesToShow: 1,
-
         },
       },
       {
@@ -61,6 +84,11 @@ $(document).ready(function () {
       },
     ],
   });
+
+  $(".diplomas").slickLightbox({
+    src: "src",
+    itemSelector: "div > img",
+  });
   if (window.innerWidth <= 768) {
     let video = $("#myVideo");
     if (video) {
@@ -75,7 +103,8 @@ $(document).ready(function () {
       $(arrow).fadeOut(1); // Ukrywa strzałkę z animacją
     }
   });
-  $(arrow).click(function () {
+  $(arrow).click(function (e) {
+    e.preventDefault();
     window.history.pushState("", "", "/");
     $("html, body").animate({ scrollTop: 0 }, 1000); // Przewinięcie do góry w 1 sekundę
   });
@@ -85,7 +114,8 @@ $(document).ready(function () {
     $(this).closest("li").find("p").toggleClass("show");
   });
 
-  $(".btn_read_more").click(function () {
+  $(".btn_read_more").click(function (e) {
+    e.preventDefault();
     $(this).closest("li").find("article").slideToggle(1500);
 
     let clickedLi = $(this).closest("li");
@@ -119,6 +149,7 @@ $(document).ready(function () {
   });
 
   $(document).click(function (e) {
+    e.preventDefault();
     if (
       !$(e.target).closest(".nav-list-contact").length &&
       $(navMenu)[0].style.top == "-1px"
@@ -129,6 +160,7 @@ $(document).ready(function () {
     }
   });
   $("a").click(function (a) {
+    a.preventDefault();
     if (a.target.hash) {
       $("html, body").animate(
         {
@@ -144,7 +176,8 @@ $(document).ready(function () {
       }
     }
   });
-  $(barBtn).click(function () {
+  $(barBtn).click(function (e) {
+    e.preventDefault();
     $(barLine1).toggleClass("change");
     $(barLine3).toggleClass("change");
     if ($(navMenu)[0].style.top != "-1px") {

@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
@@ -76,6 +77,11 @@ module.exports = {
       patterns: [
         { from: "src/images", to: "images" }, // Kopiuje folder `images` do `build/images`
       ],
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery",
     }),
     new CompressionPlugin({
       filename: "[path][base].gz", // Nazwa pliku z kompresją
