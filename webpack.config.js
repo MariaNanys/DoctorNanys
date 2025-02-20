@@ -86,7 +86,7 @@ module.exports = {
     new CompressionPlugin({
       filename: "[path][base].gz", // Nazwa pliku z kompresją
       algorithm: "gzip", // Możesz użyć 'brotli' lub 'deflate'
-      test: /\.(js|css|html|svg)$/, // Pliki do kompresji
+      test: /\.(js|css|html|svg|webp)$/, // Pliki do kompresji
       threshold: 10240, // Minimalny rozmiar pliku do kompresji (w bajtach)
       minRatio: 0.8, // Minimalny współczynnik kompresji
       compressionOptions: { level: 9 }, // Poziom kompresji
