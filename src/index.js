@@ -99,27 +99,23 @@ $(document).ready(function () {
     asNavFor: ".main__metamorphoses-images",
   });
   $(".main__metamorphoses-images").slick({
-    slidesToShow: 3,
+    slidesToShow: 5,
     slidesToScroll: 1,
     asNavFor: ".main__metamorphoses-slide",
-    dots: true,
-    centerMode: true,
     focusOnSelect: true,
+    dots: true,
     arrows: true,
+    autoplay: true,
+    centerMode: true,
+    infinite: true,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 768,
         settings: {
-          slidesToShow: 1,
-          centerPadding: "40px",
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          arrows: false,
           centerMode: true,
-          centerPadding: "20px",
+          slidesToShow: 3,
+          centerPadding: "50px",
+          arrows: false,
           slidesToShow: 1,
           autoplay: true,
           speed: 1000,

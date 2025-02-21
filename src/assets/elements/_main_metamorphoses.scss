@@ -1,0 +1,35 @@
+.main__metamorphoses {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main__metamorphoses-slide {
+  max-width: 600px;
+  width: 90vw;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  img {
+    height: auto;
+  }
+}
+.main__metamorphoses-images {
+  max-width: 1200px;
+  width: 80vw;
+  cursor: pointer;
+  margin: 0 auto;
+  img {
+    max-width: 200px;
+    height: auto;
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: $dark-grey;
+  }
+  @include L {
+    .slick-prev {
+      left: -50px;  
+    }
+  }
+}
