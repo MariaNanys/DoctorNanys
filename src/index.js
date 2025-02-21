@@ -93,6 +93,45 @@ $(document).ready(function () {
     src: "src",
     itemSelector: "div > img",
   });
+
+  $(".main__metamorphoses-slide").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    swipe: false,
+    fade: true,
+    asNavFor: ".main__metamorphoses-images",
+  });
+  $(".main__metamorphoses-images").slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: ".main__metamorphoses-slide",
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: "40px",
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: "20px",
+          slidesToShow: 1,
+          autoplay: true,
+          speed: 1000,
+        },
+      },
+    ],
+  });
+
   if (window.innerWidth <= 768) {
     let video = $("#myVideo");
     if (video) {
@@ -180,7 +219,6 @@ $(document).ready(function () {
         $(navMenu).animate({ top: "-330px" }, 1000);
       }
     }
-    
   });
   $(barBtn).click(function (e) {
     e.preventDefault();
