@@ -51,6 +51,7 @@ $(document).ready(function () {
     },
   };
   $(".diplomas").slick({
+    lazyLoad: "ondemand",
     centerMode: true,
     centerPadding: "60px",
     slidesToShow: 3,
@@ -91,6 +92,7 @@ $(document).ready(function () {
   });
 
   $(".main__metamorphoses-slide").slick({
+    lazyLoad: "ondemand",
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -99,6 +101,7 @@ $(document).ready(function () {
     asNavFor: ".main__metamorphoses-images",
   });
   $(".main__metamorphoses-images").slick({
+    lazyLoad: "ondemand",
     slidesToShow: 5,
     slidesToScroll: 1,
     asNavFor: ".main__metamorphoses-slide",

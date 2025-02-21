@@ -4,10 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-
-
 
 module.exports = {
   mode: "production",
@@ -76,7 +73,7 @@ module.exports = {
       inject: "body", // Default: injects at the end of the body
       injectPosition: "webpack-inject", // Custom position in your template
       cache: false,
-      preload: true
+      preload: true,
     }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css", // Unikalna nazwa pliku CSS
