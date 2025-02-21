@@ -5,6 +5,10 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+
+
 module.exports = {
   mode: "production",
   entry: "./src/index.js", // Entry point for your application
@@ -23,7 +27,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          "style-loader", // Injects styles into DOM
+          MiniCssExtractPlugin.loader, // Zastępuje `style-loader`
           "css-loader", // Translates CSS into CommonJS
           "sass-loader", // Compiles Sass to CSS
         ],
@@ -72,6 +76,9 @@ module.exports = {
       inject: "body", // Default: injects at the end of the body
       injectPosition: "webpack-inject", // Custom position in your template
       cache: false,
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css", // Unikalna nazwa pliku CSS
     }),
     new CopyWebpackPlugin({
       patterns: [

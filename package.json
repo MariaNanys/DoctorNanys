@@ -37,6 +37,7 @@
   ],
   "dependencies": {
     "jquery": "^3.7.1",
+    "mini-css-extract-plugin": "^2.9.2",
     "slick-carousel": "^1.8.1",
     "slick-lightbox": "^0.2.12"
   }
