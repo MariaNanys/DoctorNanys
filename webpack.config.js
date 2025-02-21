@@ -54,8 +54,8 @@ module.exports = {
     ],
     splitChunks: {
       chunks: "all", // Dzieli kod na osobne pliki
-      minSize: 30 * 1024, // Minimalny rozmiar pliku (30KB)
-      maxSize: 200 * 1024, // Maksymalny rozmiar pliku (200KB)
+      minSize: 20 * 1024, // Minimalny rozmiar pliku (30KB)
+      maxSize: 100 * 1024, // Maksymalny rozmiar pliku (200KB)
     },
   },
 
@@ -76,6 +76,7 @@ module.exports = {
       inject: "body", // Default: injects at the end of the body
       injectPosition: "webpack-inject", // Custom position in your template
       cache: false,
+      preload: true
     }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css", // Unikalna nazwa pliku CSS
