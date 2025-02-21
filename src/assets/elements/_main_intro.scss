@@ -1,14 +1,12 @@
 .main__intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: calc(100vh - 110px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(100vh - 110px);
 
-    @include M {
-      
-      max-height: 700px;
-    }
-    
+  @include M {
+    max-height: 700px;
+  }
 
   .main__intro_arrow {
     position: fixed;
@@ -48,7 +46,7 @@
   .main__intro-image-quote {
     display: flex;
     justify-content: center;
-    &>img {
+    & > img {
       width: auto;
       height: 45vh;
       max-height: 470px;
@@ -76,7 +74,7 @@
 
       @include S {
         width: 260px;
-      height: auto;
+        height: auto;
       }
     }
   }
@@ -85,7 +83,7 @@
     width: 100%;
     background-image: url("/src/images/gold-texture.webp");
     background-size: cover;
-    padding: 50px;
+    padding: 30px;
 
     @include S {
       background-position: center;
@@ -119,19 +117,21 @@
       align-items: center;
       width: 25vw;
       text-align: center;
+      gap: 10px;
       @include S {
         margin-right: 0;
       }
-
-      h3 {
-        margin-bottom: 9px;
-        width: 45px;
-      }
-
       p {
-        width: 80px;
         text-align: center;
         font-size: 14px;
+      }
+      span {
+        font-size: 28px;
+        font-weight: 600;
+      }
+      strong {
+        font-weight: 400;
+        text-transform: uppercase;
       }
     }
   }
