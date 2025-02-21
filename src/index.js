@@ -26,10 +26,6 @@ loopIt(faqSurgery, faqSurgeryList);
 loopIt(faqProsthetics, faqProstheticsList);
 
 $(document).ready(function () {
-  $(document).on("click", "a[target='_blank']", function (e) {
-    e.preventDefault();
-    window.open($(this).attr("href"), "_blank");
-  });
   jQuery.event.special.touchstart = {
     setup: function (_, ns, handle) {
       this.addEventListener("touchstart", handle, {
@@ -203,7 +199,6 @@ $(document).ready(function () {
     }
   });
   $("a").click(function (a) {
-    console.log(a);
     a.preventDefault();
     if (a.target.hash) {
       $("html, body").animate(
@@ -218,6 +213,8 @@ $(document).ready(function () {
         $(barLine3).toggleClass("change");
         $(navMenu).animate({ top: "-330px" }, 1000);
       }
+    } else {
+      window.open($(this).attr("href"), $(this).attr("target"));
     }
   });
   $(barBtn).click(function (e) {
