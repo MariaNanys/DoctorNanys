@@ -4,8 +4,9 @@
   justify-content: flex-end;
   height: calc(100vh - 145px);
 
-  @include M {
+  @include S {
     max-height: 700px;
+    height: calc(100vh - 110px);
   }
 
   .main__intro_arrow {
@@ -46,6 +47,7 @@
   .main__intro-image-quote {
     display: flex;
     justify-content: center;
+    margin-top: 30px;
     & > img {
       width: auto;
       height: 45vh;
