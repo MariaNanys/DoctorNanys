@@ -208,7 +208,7 @@ $(document).ready(function () {
     if (a.target.hash) {
       $("html, body").animate(
         {
-          scrollTop: $(a.target.hash).offset().top,
+          scrollTop: $(a.target.hash).offset().top - 50,
         },
         2000
       );
