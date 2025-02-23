@@ -4,9 +4,11 @@
   @include M {
     width: 80vw;
   }
+
   h1 {
     text-align: center;
   }
+
   .main__about-me_title-image {
     width: 100%;
     display: flex;
@@ -74,6 +76,7 @@
       font-size: 16px;
     }
   }
+
   .main__about-me_items_logos {
     padding-top: 20px;
     display: flex;
@@ -93,6 +96,7 @@
     img {
       width: 100px;
       height: auto;
+
       &:first-child {
         height: 50px;
         width: auto;
@@ -100,6 +104,7 @@
     }
   }
 }
+
 .main__about-me-image {
   display: none;
   @include S {
@@ -119,6 +124,7 @@
 
   .diplomas {
     max-width: 100%;
+
     .slick-slide {
       width: auto !important;
       margin: 0 10px;
@@ -131,6 +137,7 @@
       color: $dark-grey;
     }
   }
+
   img {
     cursor: pointer;
     max-width: 200px;

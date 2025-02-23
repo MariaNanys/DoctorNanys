@@ -10,23 +10,28 @@
   margin: 30px auto;
   display: flex;
   justify-content: center;
+
   img {
     height: auto;
   }
 }
+
 .main__metamorphoses-images {
   max-width: 320px;
   width: 80vw;
   cursor: pointer;
   margin: 0 auto;
+
   img {
     max-width: 200px;
     height: auto;
   }
+
   .slick-prev:before,
   .slick-next:before {
     color: $dark-grey;
   }
+
   @include S {
     width: 325px;
     max-width: 325px;
