@@ -2,6 +2,8 @@ header {
   background-color: $black;
   color: $white;
   width: 100%;
+  z-index: 10;
+  position: relative;
 
   .header_content {
     margin: 0 auto;
@@ -122,42 +124,42 @@ header {
   }
 }
 .nav-bar {
-      width: 43px;
-      height: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 9.5px;
-      margin: 21px 20px 0;
-      cursor: pointer;
+  width: 43px;
+  height: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 9.5px;
+  margin: 21px 20px 0;
+  cursor: pointer;
 
-      @include S {
-        display: none;
-      }
+  @include S {
+    display: none;
+  }
 
-      .bar {
-        height: 3px;
-        background-color: $white;
-        border-radius: 5px;
-      }
+  .bar {
+    height: 3px;
+    background-color: $white;
+    border-radius: 5px;
+  }
 
-      .bar1 {
-        align-self: flex-end;
-      }
+  .bar1 {
+    align-self: flex-end;
+  }
 
-      .bar1,
-      .bar3 {
-        width: 23px;
-      }
+  .bar1,
+  .bar3 {
+    width: 23px;
+  }
 
-      .bar3 {
-        align-self: flex-start;
-      }
+  .bar3 {
+    align-self: flex-start;
+  }
 
-      .change.bar1 {
-        align-self: flex-start;
-      }
+  .change.bar1 {
+    align-self: flex-start;
+  }
 
-      .change.bar3 {
-        align-self: flex-end;
-      }
-    }
+  .change.bar3 {
+    align-self: flex-end;
+  }
+}

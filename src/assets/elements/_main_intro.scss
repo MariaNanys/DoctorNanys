@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  height: calc(100vh - 145px);
+  height: calc(100vh - 70px);
+
+  margin: 0 auto;
 
   @include S {
-    max-height: 700px;
-    height: calc(100vh - 110px);
   }
 
   .main__intro_arrow {
@@ -44,39 +44,39 @@
       transform: translateY(-5px);
     }
   }
+
   .main__intro-image-quote {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    & > img {
-      width: auto;
-      height: 45vh;
-      max-height: 470px;
-      max-width: 220px;
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 210px);
+    background-color: $dark-grey;
 
-      @include S {
-        height: 60vh;
-      }
+    .main__intro-image {
+    
+    opacity: 0.3;
+    background-image: url("/src/images/fotel.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: calc(100vh - 210px);;
+position: relative;
     }
-    @include S {
-      gap: 50px;
-    }
-    @include M {
-      gap: 100px;
-    }
-    @include L {
-      gap: 150px;
-    }
-  }
-
-  .main__intro_quote {
     img {
-      width: 150px;
+      position: absolute;
+      width: 260px;
       height: auto;
+      top: 50%;
+      left: calc(50% - 130px);
+
 
       @include S {
-        width: 260px;
-        height: auto;
+        top: 15%;
+        left: unset;
+        right: 20%;
+      }
+      @include L {
+        width: 330px;
       }
     }
   }

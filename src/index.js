@@ -116,10 +116,20 @@ $(document).ready(function () {
         breakpoint: 768,
         settings: {
           centerMode: true,
+          slidesToShow: 1,
+          centerPadding: "50px",
+          arrows: false,
+          autoplay: true,
+          speed: 1000,
+        },
+      },
+      {
+        breakpoint: 1370,
+        settings: {
+          centerMode: true,
           slidesToShow: 3,
           centerPadding: "50px",
           arrows: false,
-          slidesToShow: 1,
           autoplay: true,
           speed: 1000,
         },

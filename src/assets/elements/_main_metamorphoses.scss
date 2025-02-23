@@ -15,7 +15,7 @@
   }
 }
 .main__metamorphoses-images {
-  max-width: 1200px;
+  max-width: 320px;
   width: 80vw;
   cursor: pointer;
   margin: 0 auto;
@@ -27,9 +27,19 @@
   .slick-next:before {
     color: $dark-grey;
   }
+  @include S {
+    width: 325px;
+    max-width: 325px;
+  }
+  @include M {
+    width: 737px;
+    max-width: 737px;
+  }
   @include L {
+    width: 80vw;
+    max-width: 1200px;
     .slick-prev {
-      left: -50px;  
+      left: -50px;
     }
   }
 }
