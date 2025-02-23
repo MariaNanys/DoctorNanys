@@ -52,16 +52,16 @@
     background-color: $dark-grey;
 
     .main__intro-image {
-    
-    opacity: 0.3;
-    background-image: url("/src/images/fotel.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: calc(100vh - 210px);;
-position: relative;
+
+      opacity: 0.3;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: calc(100vh - 210px);;
+      position: relative;
     }
+
     img {
       position: absolute;
       width: 260px;
@@ -123,14 +123,17 @@ position: relative;
       @include S {
         margin-right: 0;
       }
+
       p {
         text-align: center;
         font-size: 14px;
       }
+
       span {
         font-size: 28px;
         font-weight: 600;
       }
+
       strong {
         font-weight: 400;
         text-transform: uppercase;

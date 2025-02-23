@@ -25,7 +25,7 @@ module.exports = {
                 test: /\.(webp|png|jpe?g|gif|svg)$/,
                 type: 'asset/resource', // Wbudowany loader Webpack 5 dla zasobów
                 generator: {
-                    filename: 'images/[name].[contenthash][ext]', // Zmienia nazwę pliku po kompilacji
+                    filename: 'images/[name].[hash][ext]',
                 }
             },
             {
@@ -77,13 +77,13 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html", // Path to your HTML template
             scriptLoading: "defer", // Wczytuje skrypty po załadowaniu HTML
-            inject: "body", // Default: injects at the end of the body
             injectPosition: "webpack-inject", // Custom position in your template
             cache: false,
             preload: true,
             templateParameters: {
                 fotelImg: '/images/fotel.webp', // To dynamicznie generowana ścieżka do obrazu po kompilacji
             },
+            inject: "head",
             minify: true
         }),
         new MiniCssExtractPlugin({
