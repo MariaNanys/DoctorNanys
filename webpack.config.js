@@ -43,7 +43,7 @@ module.exports = {
         extractComments: false, // Usuwa komentarze
         terserOptions: {
           compress: {
-            drop_console: true, // Usuwa `console.log`
+            drop_console: false, // Usuwa `console.log`
             drop_debugger: true,
           },
         },

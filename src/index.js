@@ -100,6 +100,7 @@ $(document).ready(function () {
     fade: true,
     asNavFor: ".main__metamorphoses-images",
   });
+
   $(".main__metamorphoses-images").slick({
     lazyLoad: "ondemand",
     slidesToShow: 5,
@@ -108,7 +109,7 @@ $(document).ready(function () {
     focusOnSelect: true,
     dots: true,
     arrows: true,
-    autoplay: true,
+    autoplay: false,
     centerMode: true,
     infinite: true,
     responsive: [
@@ -119,7 +120,7 @@ $(document).ready(function () {
           slidesToShow: 1,
           centerPadding: "50px",
           arrows: false,
-          autoplay: true,
+          autoplay: false,
           speed: 1000,
         },
       },
@@ -130,11 +131,77 @@ $(document).ready(function () {
           slidesToShow: 3,
           centerPadding: "50px",
           arrows: false,
-          autoplay: true,
+          autoplay: false,
           speed: 1000,
         },
       },
     ],
+  });
+
+  // Efekt Before/After Swipe
+  $(".before-after-wrapper").each(function () {
+    let wrapper = $(this);
+    let slider = wrapper.find(".slider-handle");
+    let afterMask = wrapper.find(".after-mask");
+    let beforeLabel = wrapper.find(".before-label");
+    let afterLabel = wrapper.find(".after-label");
+
+    let startPercent = 50;
+    let clipPath = `polygon(0 0, ${startPercent}% 0, ${startPercent}% 100%, 0 100%)`;
+    afterMask.css("clip-path", clipPath);
+
+    function moveSlider(event) {
+      let rect = wrapper[0].getBoundingClientRect();
+      let posX =
+        (event.touches ? event.touches[0].clientX : event.clientX) - rect.left;
+      let percentage = (posX / rect.width) * 100;
+      percentage = Math.max(0, Math.min(100, percentage));
+
+      slider.css("left", percentage + "%");
+      // afterMask.css("width", percentage + "%");
+      clipPath = `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`;
+      afterMask.css("clip-path", clipPath);
+      if (percentage === 0) {
+        beforeLabel.show();
+        afterLabel.hide();
+        wrapper.removeClass("hide-before");
+        wrapper.addClass("hide-after");
+      } else if (percentage === 100) {
+        beforeLabel.hide();
+        afterLabel.show();
+        wrapper.removeClass("hide-after");
+        wrapper.addClass("hide-before");
+      } else {
+        beforeLabel.show();
+        afterLabel.show();
+        wrapper.removeClass("hide-before hide-after");
+      }
+    }
+
+    slider.on("mousedown touchstart", function (event) {
+      event.preventDefault();
+      $(document).on("mousemove touchmove", moveSlider);
+      $(document).on("mouseup touchend", function () {
+        $(document).off("mousemove touchmove", moveSlider);
+      });
+    });
+    $(".slider-left-arrow").on("click", function () {
+      let newLeft = Math.max(0, parseFloat(slider.css("left")) - 5);
+      slider.css("left", newLeft + "%");
+      afterMask.css(
+        "clip-path",
+        `polygon(0 0, ${newLeft}% 0, ${newLeft}% 100%, 0 100%)`
+      );
+    });
+
+    $(".slider-right-arrow").on("click", function () {
+      let newLeft = Math.min(100, parseFloat(slider.css("left")) + 5);
+      slider.css("left", newLeft + "%");
+      afterMask.css(
+        "clip-path",
+        `polygon(0 0, ${newLeft}% 0, ${newLeft}% 100%, 0 100%)`
+      );
+    });
   });
 
   if (window.innerWidth <= 768) {

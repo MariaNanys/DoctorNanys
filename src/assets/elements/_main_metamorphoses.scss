@@ -43,3 +43,118 @@
     }
   }
 }
+
+.before-after-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 60vw;
+  overflow: hidden;
+
+  @include S {
+    height: 400px;
+  }
+}
+
+.before-after-wrapper img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.after-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.after-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: $white;
+  cursor: ew-resize;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.slider-left-arrow,
+.slider-right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px; /* Możesz dostosować wielkość strzałek */
+  color: $white;
+  cursor: pointer;
+  z-index: 2; /* Ustawiamy strzałki na wierzchu suwaka */
+}
+
+.after-mask img {
+  transition: all 0.3s ease;
+}
+
+.before-label,
+.after-label {
+  position: absolute;
+  top: 10%;
+  font-size: 20px;
+  font-weight: bold;
+  color: $white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 20px;
+  z-index: 2;
+}
+
+.before-label {
+  right: 10px;
+}
+
+.after-label {
+  left: 10px;
+}
+
+.slider-left-arrow {
+  left: -18px; /* Przesunięcie strzałki w lewo */
+  width: 25px;
+  height: 20px;
+  transform: rotate(90deg);
+  background-color: white;
+  padding: 2px;
+}
+
+.slider-right-arrow {
+  right: -18px; /* Przesunięcie strzałki w prawo */
+  width: 25px;
+  height: 20px;
+  transform: rotate(270deg);
+  background-color: white;
+  padding: 2px;
+}
+
+.slick-slide {
+  width: 600px;
+}
