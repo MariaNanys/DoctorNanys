@@ -22,6 +22,13 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(webp|png|jpe?g|gif|svg)$/,
+                type: 'asset/resource', // Wbudowany loader Webpack 5 dla zasobów
+                generator: {
+                    filename: 'images/[name].[contenthash][ext]', // Zmienia nazwę pliku po kompilacji
+                }
+            },
+            {
                 test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader, // Zastępuje `style-loader`
@@ -43,7 +50,7 @@ module.exports = {
                 extractComments: false, // Usuwa komentarze
                 terserOptions: {
                     compress: {
-                        drop_console: false, // Usuwa `console.log`
+                        drop_console: true, // Usuwa `console.log`
                         drop_debugger: true,
                     },
                 },
@@ -75,7 +82,7 @@ module.exports = {
             cache: false,
             preload: true,
             templateParameters: {
-                fotelImg: require.resolve("./src/images/fotel.webp"), // Dynamiczny import obrazu
+                fotelImg: '/images/fotel.webp', // To dynamicznie generowana ścieżka do obrazu po kompilacji
             },
             minify: true
         }),
